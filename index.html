@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Inventario</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">LOGO</div>
+      <nav class="menu">
+        <p>Menú</p>
+        <a href="index.html"><button>INICIO</button></a>
+        <div class="dropdown">
+          <button>PROCESO COMPRAS</button>
+          <div class="submenu">
+            <a href="nueva-compra.html"><button>Nueva compra</button></a>
+            <a href="historial-compras.html"><button>Historial de compras</button></a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button>PROCESAR VENTAS</button>
+          <div class="submenu">
+            <a href="nueva-venta.html"><button>Nueva Venta</button></a>
+            <a href="admin-compras.html"><button>Administración de compras</button></a>
+          </div>
+        </div>
+        <a href="productos.html"><button>PRODUCTOS</button></a>
+        <div class="dropdown">
+          <button>CONTACTOS</button>
+          <div class="submenu">
+            <a href="clientes.html"><button>Clientes</button></a>
+            <a href="proveedores.html"><button>Proveedores</button></a>
+          </div>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="header">
+        <div class="datetime">
+          <span id="clock">HH:MM</span>
+          <span id="date">DIA ACTUAL, FECHA</span>
+        </div>
+        <div class="settings">⚙</div>
+      </header>
+
+      <section class="scanner">
+        <p>Escaneo de productos</p>
+        <button class="status">ACTIVO</button>
+        <div class="product-box">
+          <p><strong>Producto detectado</strong></p>
+          <p>Nombre: <span id="nombre-producto"></span></p>
+          <p>Stock: <span id="stock-producto"></span></p>
+          <p>Precio c/u: <span id="precio-producto"></span></p>
+          <button id="agregar-venta">Agregar a la venta</button>
+          <button id="ver-info">Ver más info</button>
+        </div>
+      </section>
+
+      <section class="historial">
+        <div class="historial-box">
+          <p><strong>HISTORIAL</strong> HOY</p>
+          <ul id="lista-historial"></ul>
+          <a href="#">[Ver historial completo]</a>
+        </div>
+
+        <div class="resumen-box">
+          <p><strong>RESUMEN</strong></p>
+          <p>📉 <span id="estado-stock">Stock Crítico</span></p>
+          <p>Ventas: <span id="ventas"></span> / 1500</p>
+          <p>Productos vendidos: <span id="vendidos"></span></p>
+          <p>∑ Última Venta: <span id="ultima-venta"></span></p>
+          <a href="#">[Ver historial resumen]</a>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
