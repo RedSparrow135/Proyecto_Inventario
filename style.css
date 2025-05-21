@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #999;
+  padding: 0 10px;
+  user-select: none;
+  -webkit-app-region: drag;
+  height: 30px;
+}
+.titlebar button {
+  -webkit-app-region: no-drag;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.logo {
+  background: #f55;
+  padding: 5px 10px;
+  color: white;
+}
+.gear {
+  margin-left: 10px;
+}
+
+#clock,
+#date {
+  display: inline-block;
+  padding: 0 10px;
+  color: white;
+}
+.titlebar-center {
+  display: flex;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+}
+.sidebar {
+  width: 180px;
+  background: #666;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.sidebar button {
+  background: #337;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+}
+.scanner {
+  flex: 2;
+  border: 2px dashed #333;
+  padding: 15px;
+}
+.status {
+  background: #0a0;
+  color: white;
+  padding: 2px 6px;
+  margin-left: 10px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.detected-product {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 10px;
+}
+.detected-product img {
+  width: 80px;
+}
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.actions button {
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+}
+.actions .add {
+  background: #5a5;
+}
+.actions .info {
+  background: #3aa;
+  color: white;
+}
+
+.sidebar-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+  overflow-y: auto;
+}
+.card {
+  border: 1px dashed #666;
+  padding: 10px;
+}
+.card.history ul {
+  list-style: none;
+  margin: 10px 0;
+}
+.card .critical {
+  color: crimson;
+  font-weight: bold;
+}

@@ -1,0 +1,68 @@
+/* views/productos.css */
+.productos-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.tabla-productos {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tabla-productos thead {
+  background-color: #2d70ff;
+  color: white;
+}
+
+.tabla-productos th,
+.tabla-productos td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.tabla-productos tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.editar,
+.eliminar {
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.editar {
+  background-color: #ffd700;
+}
+
+.eliminar {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.acciones {
+  margin-top: 15px;
+  text-align: right;
+}
+
+.nuevo {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nuevo:hover {
+  background-color: #218838;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productos</title>
+    <link rel="stylesheet" href="productos.css" />
+  </head>
+  <body>
+    <section class="productos-container">
+      <h2>📦 Inventario de Productos</h2>
+
+      <table class="tabla-productos">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Stock</th>
+            <th>Precio (S/.)</th>
+            <th>Categoría</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-body">
+          <!-- Ejemplo de fila (puedes llenar dinámicamente con JS) -->
+          <tr>
+            <td>001</td>
+            <td>Filtro 120 cc</td>
+            <td>15</td>
+            <td>5.25</td>
+            <td>Motor</td>
+            <td>
+              <button class="editar">✏️</button>
+              <button class="eliminar">🗑️</button>
+            </td>
+          </tr>
+          <!-- más productos aquí -->
+        </tbody>
+      </table>
+
+      <div class="acciones">
+        <button class="nuevo">➕ Agregar Producto</button>
+      </div>
+    </section>
+  </body>
+</html>
