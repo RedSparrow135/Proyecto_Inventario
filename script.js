@@ -33,3 +33,12 @@ document.getElementById("lista-historial").innerHTML = `
 document.getElementById("ventas").textContent = "";
 document.getElementById("vendidos").textContent = "";
 document.getElementById("ultima-venta").textContent = "";
+
+
+// Menú desplegable con flechitas
+document.querySelectorAll('.dropdown > button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const dropdown = btn.parentElement;
+    dropdown.classList.toggle('open');
+  });
+});

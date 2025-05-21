@@ -12,48 +12,81 @@ body, html {
 }
 
 /* Sidebar */
+/* Estilo general del menú */
 .sidebar {
-  width: 250px;
-  background-color: #2d2f33;
-  color: #fff;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
+  width: 220px;
+  background-color: #7e7e7e;
+  color: black;
+  padding: 10px;
+  font-family: Arial, sans-serif;
 }
 
 .logo {
-  background-color: #e74c3c;
-  padding: 1rem;
+  background-color: #ff4d4d;
+  padding: 10px;
   text-align: center;
   font-weight: bold;
-  margin-bottom: 1rem;
 }
 
 .menu p {
-  margin-bottom: 0.5rem;
+  font-size: 18px;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.menu button {
+.menu a button,
+.menu .dropdown > button {
   width: 100%;
-  padding: 0.5rem;
-  margin-bottom: 0.5rem;
+  background-color: #4e5bff;
+  color: white;
   border: none;
-  background-color: #3a3d42;
-  color: #fff;
+  padding: 10px;
+  margin-bottom: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  text-align: left;
+  transition: background-color 0.3s ease;
+  position: relative;
 }
 
-.menu button:hover {
-  background-color: #555;
+.menu a button:hover,
+.menu .dropdown > button:hover {
+  background-color: #3742fa;
 }
 
-.dropdown .submenu {
-  margin-left: 1rem;
-  display: flex;
-  flex-direction: column;
+.menu .dropdown > button::after {
+  content: "▼";
+  float: right;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
 }
+
+.menu .dropdown.open > button::after {
+  transform: rotate(-180deg);
+}
+
+.submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.dropdown.open .submenu {
+  max-height: 200px;
+  opacity: 1;
+}
+
+.submenu a button {
+  background-color: #3fc4e8;
+  color: black;
+  padding-left: 20px;
+  margin-bottom: 4px;
+}
+
+.submenu a button:hover {
+  background-color: #0fb8d1;
+}
+
 
 /* Main content */
 .main {
