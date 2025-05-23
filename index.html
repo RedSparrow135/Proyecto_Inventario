@@ -1,133 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
+    <title>Gestor de Inventario</title>
+    <link rel="stylesheet" href="../Proyecto_Inventario/styles.css" />
+    <link rel="stylesheet" href="../Proyecto_Inventario/src/shared/style.css" />
+    <link rel="stylesheet" href="../Proyecto_Inventario/src/ui/header.css" />
+    <link
+      rel="stylesheet"
+      href="../Proyecto_Inventario/src/sidebar/sidebar.css"
     />
-    <meta
-      http-equiv="X-Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
+    <link
+      rel="stylesheet"
+      href="../Proyecto_Inventario/src/ventas/ventas.css"
     />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Oscar's Prueba</title>
-    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Barra superior custom -->
-    <header class="titlebar">
-      <div class="titlebar-left">
-        <div class="logo">LOGO</div>
-      </div>
-      <div class="titlebar-center">
-        <div id="clock">HH:MM</div>
-        <div id="date">DÍA ACTUAL, FECHA</div>
-      </div>
-      <div class="titlebar-right">
-        <button class="btn-icon" data-action="minimize">🗕</button>
-        <button class="btn-icon" data-action="maximize">🗖</button>
-        <button class="btn-icon" data-action="close">🗙</button>
-        <div class="btn-icon gear">⚙️</div>
-      </div>
-    </header>
+    <div class="main-container">
+      <!-- menu.html se carga aquí -->
+      <!-- header.html se carga dinámicamente -->
 
-    <div class="container">
-      <nav class="sidebar">
-        <button onclick="loadView('home')">PROCESAR VENTAS</button>
-        <button onclick="loadView('productos')">GESTIONAR PRODUCTOS</button>
-        <button onclick="loadView('contactos')">CONTACTOS</button>
-      </nav>
-
-      <main class="main-content">
-        <section class="scanner">
-          <h2>Escaneo de productos <span class="status">ACTIVO</span></h2>
-          <div class="detected-product">
-            <img src="filtro.png" alt="Filtro 120 cc" />
-            <div>
-              <h3>Filtro 120 cc</h3>
-              <p>Stock: 02</p>
-              <p>Precio c/u: S/.25</p>
-            </div>
-            <div class="actions">
-              <button class="add">Agregar a la venta</button>
-              <button class="info">Ver más info</button>
-            </div>
-          </div>
-        </section>
-
-        <aside class="sidebar-right">
-          <div class="card history">
-            <h3>HISTORIAL</h3>
-            <ul>
-              <li>Filtro 120 cc — hh:mm (acción hecha)</li>
-              <li>Tank 10 cc — hh:mm (acción hecha)</li>
-              <li>Timón de r — hh:mm (acción hecha)</li>
-              <li>Llave nuda — hh:mm (acción hecha)</li>
-            </ul>
-            <a href="#">Ver historial completo</a>
-          </div>
-          <div class="card summary">
-            <h3>Resumen</h3>
-            <p class="critical">⚠️ Stock Crítico</p>
-            <p>Ventas: S/. 1500</p>
-            <p>Productos vendidos: 45</p>
-            <p>Última venta: filtro 120cc</p>
-            <a href="#">Ver historial resumen</a>
-          </div>
-        </aside>
+      <main class="content">
+        <!-- tu contenido actual del panel principal va aquí -->
       </main>
     </div>
 
-    <script>
-      // Controles de ventana
-      document.querySelectorAll(".btn-icon").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const action = btn.dataset.action;
-          if (action) window.electronAPI.windowControl(action);
-        });
-      });
-      // Reloj en tiempo real
-      function updateClock() {
-        const now = new Date();
-        document.getElementById("clock").textContent = now.toLocaleTimeString(
-          [],
-          { hour: "2-digit", minute: "2-digit" }
-        );
-        document.getElementById("date").textContent = now.toLocaleDateString();
-      }
-      setInterval(updateClock, 1000);
-      updateClock();
-
-      // Cambiar vistas dinámicamente
-      function loadView(view) {
-        let viewPath = "";
-        if (view === "productos") {
-          viewPath = "views/productos.html";
-        } else if (view === "home") {
-          // Si tienes una vista home, pon la ruta aquí
-          viewPath = "home.html";
-        } else if (view === "contactos") {
-          // Si tienes una vista contactos, pon la ruta aquí
-          viewPath = "contactos.html";
-        }
-        if (viewPath) {
-          fetch(viewPath)
-            .then((res) => res.text())
-            .then((html) => {
-              // Extrae solo el contenido relevante (por ejemplo, el <section>)
-              const temp = document.createElement("div");
-              temp.innerHTML = html;
-              const section = temp.querySelector("section");
-              document.querySelector(".main-content").innerHTML = "";
-              if (section) {
-                document.querySelector(".main-content").appendChild(section);
-              } else {
-                document.querySelector(".main-content").innerHTML = html;
-              }
-            });
-        }
-      }
-    </script>
+    <script src="src/ui/ui.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/time.js"></script>
   </body>
 </html>

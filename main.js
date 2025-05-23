@@ -1,18 +1,24 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, ipcMain } = require("electron");
+const path = require("path");
 
-const createWindow = () => {
-  const window = new BrowserWindow({
+let mainWindow;
+
+function createWindow() {
+  mainWindow = new BrowserWindow({
     width: 1200,
     height: 800,
-    minwidth: 1000,
-    minheight: 600,
+    minWidth: 1000,
+    minHeight: 600,
+    frame: false, // desactiva la barra nativa
     webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false,
+      preload: path.join(__dirname, "preload.js"),
+      nodeIntegration: false,
+      contextIsolation: true,
     },
   });
 
-  window.loadFile("index.html");
+  mainWindow.loadFile("index.html");
+  // mainWindow.webContents.openDevTools(); // descomenta para debug
 
   // IPC para minimizar, maximizar, cerrar:
   ipcMain.on("window-control", (event, action) => {
@@ -24,8 +30,12 @@ const createWindow = () => {
     }
     if (action === "close") mainWindow.close();
   });
-};
+}
 
-app.whenReady().then(() => {
-  createWindow();
+app.whenReady().then(createWindow);
+app.on("window-all-closed", () => {
+  if (process.platform !== "darwin") app.quit();
+});
+app.on("activate", () => {
+  if (BrowserWindow.getAllWindows().length === 0) createWindow();
 });

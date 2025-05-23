@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f5f5f5;
+}
+
+.contenedor {
+  max-width: 1000px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #444;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.logo {
+  background: red;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.reloj {
+  text-align: right;
+  background: #2d70ff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.fecha {
+  font-size: 0.8em;
+  display: block;
+}
+
+.config {
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.formulario {
+  display: flex;
+  margin-top: 20px;
+  gap: 30px;
+}
+
+.columna-izquierda {
+  flex: 2;
+}
+
+.columna-izquierda label {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.columna-izquierda input,
+.columna-izquierda select,
+.columna-izquierda textarea {
+  width: 70%;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.agregar {
+  margin-left: 10px;
+  background: #2d70ff;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.columna-derecha {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.foto-section,
+.pdf-section {
+  text-align: center;
+}
+
+.btn-foto,
+.btn-agregar-pdf {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.imagen-placeholder {
+  margin-top: 10px;
+  width: 100%;
+  height: 180px;
+  background: repeating-conic-gradient(#ccc 0% 25%, #fff 0% 50%) 50% / 20px 20px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+.manual-pdf {
+  margin-top: 10px;
+  background: #ff4d4d;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.cancelar {
+  background: #ff4d4d;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.siguiente {
+  background: #2d70ff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}

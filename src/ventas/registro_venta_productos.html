@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gestor de Inventario</title>
+    <link rel="stylesheet" href="productos.css" />
+    <link rel="stylesheet" href="../shared/style.css" />
+    <link rel="stylesheet" href="../ui/header.css" />
+    <link rel="stylesheet" href="../sidebar/sidebar.css" />
+    <link rel="stylesheet" href="ventas.css" />
+  </head>
+  <body>
+    <div class="contenedor">
+      <header>
+        <div class="logo">LOGO</div>
+        <h1>Registro de productos</h1>
+        <div class="reloj">
+          HH:MM<br /><span class="fecha">DIA ACTUAL, FECHA</span>
+        </div>
+        <div class="config">⚙️</div>
+      </header>
+
+      <section class="formulario">
+        <div class="columna-izquierda">
+          <label>Código del producto: <input type="text" /></label>
+          <label>Nombre del producto: <input type="text" /></label>
+          <label>Modelo del Producto: <input type="text" /></label>
+          <label>Submodelo / Serie: <input type="text" /></label>
+
+          <label
+            >Marca:
+            <select>
+              <option>Seleccione</option>
+            </select>
+            <button class="agregar">AGREGAR</button>
+          </label>
+
+          <label
+            >Proveedor:
+            <select>
+              <option>Seleccione</option>
+            </select>
+            <button class="agregar">AGREGAR</button>
+          </label>
+
+          <label
+            >Descripción:
+            <textarea rows="3"></textarea>
+          </label>
+
+          <label
+            >Categoría Principal:
+            <select>
+              <option>Seleccione</option>
+            </select>
+            <button class="agregar">AGREGAR</button>
+          </label>
+
+          <label
+            >Subcategoría:
+            <select>
+              <option>Seleccione</option>
+            </select>
+            <button class="agregar">AGREGAR</button>
+          </label>
+        </div>
+
+        <div class="columna-derecha">
+          <label class="foto-section">
+            Foto del Producto:
+            <button class="btn-foto">AGREGAR</button>
+            <div class="imagen-placeholder"></div>
+          </label>
+
+          <label class="pdf-section">
+            <button class="btn-agregar-pdf">AGREGAR</button>
+            <div class="manual-pdf">📄 Manual del Producto (PDF)</div>
+          </label>
+        </div>
+      </section>
+
+      <footer>
+        <button class="cancelar">CANCELAR</button>
+        <button class="siguiente">SIGUIENTE ></button>
+      </footer>
+    </div>
+  </body>
+</html>
